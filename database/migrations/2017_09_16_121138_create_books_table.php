@@ -18,7 +18,6 @@ class CreateBooksTable extends Migration
             $table->string('title', 100);
             $table->text('description');
             $table->string('image', 255);
-            $table->string('link', 255);
             $table->boolean('is_available')->default(0);
             $table->timestamps();
             $table->index('title');
