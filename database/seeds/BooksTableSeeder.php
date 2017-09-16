@@ -15,8 +15,7 @@ class BooksTableSeeder extends Seeder
             DB::table('books')->insert([
                 'title' => str_random(10),
                 'description' => str_random(50),
-                'image' => str_random(10),
-                'link' => str_random(10)
+                'image' => str_random(10)
             ]);
         }
     }
