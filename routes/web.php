@@ -17,9 +17,9 @@
 | Main Routes
 |--------------------------------------------------------------------------
 */
-//Route::get('/', 'BookController@index');
-//Route::get('/books/{book}', 'BookController@show');
-//Route::get('/authors/{author}', 'AuthorController@show');
+Route::get('/', 'BookController@index');
+Route::get('/books/{book}', 'BookController@show');
+Route::get('/authors/{author}', 'AuthorController@show');
 
 /*
 |--------------------------------------------------------------------------
