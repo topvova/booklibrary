@@ -13,8 +13,8 @@ class AuthorsTableSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             DB::table('authors')->insert([
-                'name' => str_random(10),
-                'surname' => str_random(15)
+                'name' => 'Author',
+                'surname' => $i
             ]);
         }
     }

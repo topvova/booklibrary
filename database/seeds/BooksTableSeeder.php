@@ -13,9 +13,9 @@ class BooksTableSeeder extends Seeder
     {
         for ($i = 0; $i < 20; $i++) {
             DB::table('books')->insert([
-                'title' => str_random(10),
-                'description' => str_random(50),
-                'image' => str_random(10)
+                'title' => 'Title ' . $i,
+                'description' => 'Description ' . str_random(30),
+                'image' => 'http://placehold.it/100x150/'
             ]);
         }
     }
