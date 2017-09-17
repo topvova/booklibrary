@@ -16,13 +16,4 @@ class AuthorRepository extends BaseRepository
     {
         return Author::class;
     }
-    /**
-     * Show latest 5 authors on index page.
-     *
-     * @return mixed
-     */
-    public function showLatest()
-    {
-        return $this->model->take(5)->latest()->get();
-    }
 }

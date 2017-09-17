@@ -23,7 +23,8 @@ class BookRepository extends BaseRepository
      * @param $author
      * @return mixed
      */
-    public function booksByAuthor(Author $author) {
+    public function booksByAuthor(Author $author)
+    {
         $books = $author->books();
 
         return $books->orderBy('id', 'desc');
