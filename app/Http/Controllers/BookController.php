@@ -18,15 +18,15 @@ class BookController extends Controller
     public function index(AuthorRepository $authorRepository, BookRepository $bookRepository)
     {
         return view('book.index', [
-            'authors'=>$authorRepository->showLatest(),
-            'books'=>$bookRepository->paginate(5)
+            'authors' => $authorRepository->all(),
+            'books' => $bookRepository->paginate(5)
         ]);
     }
 
-    public function show(BookRepository $bookRepository, $id){
-
+    public function show(BookRepository $bookRepository, $id)
+    {
         return view('book.show', [
-            'book'=> $bookRepository->find($id)
+            'book' => $bookRepository->find($id)
         ]);
     }
 }

@@ -16,12 +16,13 @@ class AuthorController extends Controller
      * @param BookRepository $bookRepository
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id, AuthorRepository $authorRepository, BookRepository $bookRepository){
+    public function show($id, AuthorRepository $authorRepository, BookRepository $bookRepository)
+    {
         $author = $authorRepository->find($id);
 
         return view('book.index', [
-            'authors' => $authorRepository->showLatest(),
-            'books' => $bookRepository->booksByAuthor($author)
+            'authors' => $authorRepository->all(),
+            'books' => $bookRepository->booksByAuthor($author)->paginate(5)
         ]);
     }
 }
