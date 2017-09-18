@@ -47,9 +47,10 @@ class BookController extends Controller
                 ->withErrors('Завантажте зображення');
         }
 
-        $result = $bookRepository->create($request);
+        $book = $bookRepository->create($request->all());
+        $book->authors()->attach($request->authors);
 
-        if ($result != false) {
+        if ($book != false) {
             return redirect('/admin/books');
         } else {
             return redirect('/admin/books')
@@ -92,7 +93,12 @@ class BookController extends Controller
             'authors'=>'required'
         ]);
 
-        $result = $bookRepository->update($request->all(), $bookId);
+        $book = $bookRepository->find($bookId);
+
+        $book->authors()->detach();
+        $book->authors()->attach($request->authors);
+
+        $result = $bookRepository->update($request->except(['authors','_method','_token']), $bookId);
 
         if ($result != false) {
             return redirect('/admin/books');
@@ -111,6 +117,10 @@ class BookController extends Controller
      */
     public function delete(BookRepository $bookRepository, $bookId)
     {
+
+        $book = $bookRepository->find($bookId);
+        $book->authors()->detach();
+
         $result = $bookRepository->delete($bookId);
 
         if ($result != false) {
