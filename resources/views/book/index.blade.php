@@ -29,9 +29,7 @@
                 @foreach($books as $book)
                     <div class="panel-group">
                         <div class="panel panel-default">
-                            <div class="panel-heading text-center">
-                                <span class="glyphicon glyphicon-book small"></span>
-                                <a href="{{url('books/'.$book->id)}}">{{$book->title}}</a>
+                            <div class="panel-heading text-center"><h3><a href="{{url('books/'.$book->id)}}">{{$book->title}}</a></h3>
                             </div>
                             <div class="panel-body">
                                 <div class="col-md-4 col-sm-12">

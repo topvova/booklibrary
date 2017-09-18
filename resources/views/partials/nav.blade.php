@@ -7,11 +7,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">{{ config('app.name') }}</a>
+            <a class=" navbar navbar-brand" href="/">{{ config('app.name') }}</a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right"></ul>
+            <a class="navbar navbar-right navbar-brand" href="/admin/books">AdminPanel</a>
         </div>
     </div>
 </nav>
