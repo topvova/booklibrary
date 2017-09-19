@@ -31,3 +31,9 @@ Route::post('/admin/books', 'Admin\BookController@store');
 Route::get('/admin/books/edit/{book}', 'Admin\BookController@edit');
 Route::patch('/admin/books/{book}', 'Admin\BookController@update');
 Route::delete('/admin/books/{book}', 'Admin\BookController@delete');
+
+Route::get('/admin/authors', 'Admin\AuthorController@index');
+Route::post('/admin/authors', 'Admin\AuthorController@store');
+Route::get('/admin/authors/edit/{book}', 'Admin\AuthorController@edit');
+Route::patch('/admin/authors/{book}', 'Admin\AuthorController@update');
+Route::delete('/admin/authors/{book}', 'Admin\AuthorController@delete');
